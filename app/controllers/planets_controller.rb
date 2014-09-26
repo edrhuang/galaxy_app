@@ -1,6 +1,7 @@
 class PlanetsController < ApplicationController
+	helper_method :sort_column, :sort_direction 
 	def index 
-		@planets = Planet.all
+		@planets = Planet.order(sort_column + " " + sort_direction)
 	end
 
 	def new 
@@ -51,6 +52,15 @@ class PlanetsController < ApplicationController
 	def planet_params 
 		params.require(:planet).permit(:planet, :diameter, :mythological_god)
 	end
+
+	def sort_column 
+		params[:sort] || "planet"
+	end
+
+	def sort_direction 
+		params[:direction] || "asc"
+	end
+
 
 end
 
