@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planet: MyString
+  diameter: 1
+  mythological_god: MyString
+
+two:
+  planet: MyString
+  diameter: 1
+  mythological_god: MyString

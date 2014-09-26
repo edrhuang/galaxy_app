@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>List of Planets</title>
+</head>
+<body>
+  <header>
+    
+  </header>
+ 
+
+  <section class="container">
+    <h1>List of all Planets</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Planet</th>
+          <th>Diameter (km)</th>
+          <th>Mythological God</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @planets.each do |planet| %>
+         <tr>
+            <td><%= planet.id %></td>
+            <td><%= link_to planet.planet, planet_path(planet) %></td>
+            <td><%= planet.diameter %></td>
+            <td><%= planet.mythological_god %></td>
+            <td><%= planet.created_at %></td>
+            <td>
+                <%= link_to 'Edit', edit_planet_path(planet), :class => 'btn btn-mini btn-warning' %>
+                <%= link_to 'Destroy', planet_path(planet), 
+                    method: :delete, data: { confirm: 'Are you sure?' },
+                    :class => 'btn btn-mini btn-danger' %>
+            </td>
+            
+          </tr>
+        <% end %>
+      
+    </tbody>
+    </table>
+
+
+  </section>
+
+  <section class="container">
+    <%= link_to 'New Planet', new_planet_path, class: "btn btn-large btn-success" %>
+  </section> 
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>List of Planets</title>
+	<style type="text/css">
+		#list{
+			display: inline-block;
+
+		}
+
+		.name{
+			width: 400px;
+			display: inline-block;
+
+		}
+
+		.diameter {
+			width: 400px;
+			display: inline-block;
+
+		}
+
+		.god{
+			width: 400px;
+			display: inline-block;
+		}
+		.back{
+			margin-top: 100px;
+			color: red;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<section id="list">
+		<h1>Planet List</h1>
+		<div class="name">
+			<h2>Planets</h2>
+			<%= @planet.planet %>
+		</div>
+		<div class="diameter">
+			<h2>Diameter</h2>
+			<%= @planet.diameter %>
+		</div>
+		<div class="god">
+			<h2>Mythological God</h2>
+			<%= @planet.mythological_god %>
+		</div>
+		
+	</section>
+	<section class="back">
+		<%= link_to 'Back', planets_path %> 
+	</section>
+</body>
+</html>
+
+
+
+
